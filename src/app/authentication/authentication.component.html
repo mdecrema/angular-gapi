@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid rgb(65, 65, 231); border-radius: 5px; margin-top: 50px">
+            <button class="btn btn-primary" type="submit" (click)="login()">Login</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid rgb(248, 164, 8); border-radius: 5px; margin-top: 20px">
+            <button class="btn btn-danger" type="submit" (click)="logout()">Sign out</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid rgb(248, 164, 8); border-radius: 5px; margin-top: 20px">
+            <button class="btn btn-warning" type="submit" (click)="getUserId()">Get User ID</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid rgb(248, 164, 8); border-radius: 5px; margin-top: 20px">
+            <button class="btn btn-warning" type="submit" (click)="getAccessToken()">Get Access Token</button>
+        </div>
+    </div>
+    <div class="row gmail" style="border: 1px solid red; margin-top: 30px;">
+        <h4>Gmail Api</h4>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="readMails()">E-mail List</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="sendMail()">Send E-mail</button>
+        </div>
+    </div>
+    <div class="row gmail" style="border: 1px solid green; margin-top: 30px;">
+        <h4>Calendar Api</h4>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="getCalendarList()">Calendar List</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="getCalendarByName()">Calendar By Name</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="getEvents()">Get Events</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="postEvent()">Create New Event</button>
+        </div>
+    </div>
+    <div class="row gmail" style="border: 1px solid rgb(60, 109, 216); margin-top: 30px;">
+        <h4>Contacts Api</h4>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="getContactsList()">Contacts List</button>
+        </div>
+    </div>
+</div>
