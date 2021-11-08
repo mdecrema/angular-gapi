@@ -13,6 +13,7 @@ export class AuthenticationComponent implements OnInit {
   user: gapi.auth2.GoogleUser;
   userID: string;
   access_token: any;
+  userPicture: any;
   // Gmail
   emails: any;
   // Calendar
@@ -69,8 +70,10 @@ export class AuthenticationComponent implements OnInit {
     this.googleApiService.signIn().then(
       (res) => {
         this.user = res;
+        this.userPicture =  res.getBasicProfile().getImageUrl();
+        localStorage.setItem('accessToken', this.user.getAuthResponse(true).access_token);
+
         console.log(this.user);
-        localStorage.setItem('accessToken', this.user.getAuthResponse(true).access_token)
       }
     );
     
