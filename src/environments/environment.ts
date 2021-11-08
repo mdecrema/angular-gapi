@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  apiKey: 'Your Google Api KEY', // Your Google Api KEY
+  clientId: 'Your Google Api CLIENT ID' // Your Google Api CLIENT ID
 };
 
 /*

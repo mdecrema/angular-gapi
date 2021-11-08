@@ -51,7 +51,8 @@ export class GoogleApiService {
 
   getAccessToken(user: gapi.auth2.GoogleUser) {
     // Undefined if stamped
-    return user.getAuthResponse().access_token;
+    return user.getAuthResponse(true).access_token;
   }
+  
 
 }

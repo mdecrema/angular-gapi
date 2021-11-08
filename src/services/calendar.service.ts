@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ export class CalendarService {
   constructor() {
     gapi.load('client', () => {
       gapi.client.init({
-        apiKey: 'AIzaSyA8usr5NDzCO3CV3O6bdzQxk8JRsZw7cH0',
-        clientId: '202051394114-scm5a26govtgdup6tc438of4lk7qv6ok.apps.googleusercontent.com',
+        apiKey: environment.apiKey, // Your Google Api KEY,
+        clientId: environment.clientId, // Your Google Api CLIENT ID,
         discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
         scope: 'https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar.events.readonly'
       })

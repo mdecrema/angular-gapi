@@ -20,7 +20,8 @@ export class AuthenticationComponent implements OnInit {
   calendar: any;
   eventList: any;
   // People Contacts
-  contactGroups: any;
+  contactGroupsList: any;
+  contactGroup: any;
   
   event = {
     'summary': 'Nuovo Appuntamento',
@@ -69,6 +70,7 @@ export class AuthenticationComponent implements OnInit {
       (res) => {
         this.user = res;
         console.log(this.user);
+        localStorage.setItem('accessToken', this.user.getAuthResponse(true).access_token)
       }
     );
     
@@ -77,6 +79,7 @@ export class AuthenticationComponent implements OnInit {
   logout() {
     this.googleApiService.signOut();
     console.log('You Signed Out!');
+    this.user = undefined;
   }
 
   getUserId() {
@@ -132,8 +135,17 @@ export class AuthenticationComponent implements OnInit {
   // People Contacts
 
   getContactsList() {
-    this.contactGroups = this.contactService.getContactsList(this.user);
-    console.log(this.contactGroups);
+    this.contactService.getContactsList().then(
+      (res) => {
+        this.contactGroupsList = res;
+        console.log(this.contactGroupsList);
+      }
+    );
+  }
+
+  getContactGroupsByName() {
+    this.contactGroup = this.contactService.getContactGroupByName();
+    console.log(this.contactGroup);
   }
 
 }

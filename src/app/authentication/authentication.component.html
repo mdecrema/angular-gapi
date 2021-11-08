@@ -1,5 +1,14 @@
 <div class="container">
     <div class="row">
+        <div class="col-lg-12" *ngIf="!this.user">
+            <span style="color: red">Nessun utente loggato</span>
+        </div>
+        <div class="col-lg-12" *ngIf="this.user">
+            <strong>{{ user.nt.Se }}</strong><br />
+            <span>{{ user.nt.Yt }}</span>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-6 offset-lg-3" style="border: 1px solid rgb(65, 65, 231); border-radius: 5px; margin-top: 50px">
             <button class="btn btn-primary" type="submit" (click)="login()">Login</button>
         </div>
@@ -41,6 +50,9 @@
         <h4>Contacts Api</h4>
         <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
             <button class="btn" type="submit" (click)="getContactsList()">Contacts List</button>
+        </div>
+        <div class="col-lg-6 offset-lg-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px">
+            <button class="btn" type="submit" (click)="getContactGroupsByName()">Contact Group</button>
         </div>
     </div>
 </div>
